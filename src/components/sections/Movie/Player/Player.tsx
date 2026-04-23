@@ -60,6 +60,10 @@ const MoviePlayer: React.FC<MoviePlayerProps> = ({ movie, startAt }) => {
               key={PLAYER.title}
               src={PLAYER.source}
               className={cn("z-10 h-full", { "pointer-events-none": idle && !mobile })}
+              /** * THE SHIELD: This sandbox attribute blocks pop-ups and redirects.
+               * We purposely omit "allow-popups" to keep the ads from opening new tabs.
+               **/
+              sandbox="allow-forms allow-pointer-lock allow-same-origin allow-scripts allow-top-navigation"
             />
           )}
         </Card>
